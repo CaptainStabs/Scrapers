@@ -20,4 +20,4 @@ file_name = url_2[url_2.rindex("/") :]
 print(file_name)
 
 
-get_pdf(save_dir, file_name, url_2, debug=False, sleep_time=configs.sleep_time, try_overwite=False, no_overwrite=True)
+get_pdf(save_dir, file_name, url_2, debug=False, sleep_time=configs.sleep_time, try_overwite=True, no_overwrite=True, add_date=True)

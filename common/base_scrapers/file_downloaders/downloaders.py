@@ -32,7 +32,7 @@ def file_compare(save_dir, file_1, file_2, try_overwite=False, no_overwrite=Fals
 
 
 def get_pdf(
-    save_dir, file_name, url_2, debug, sleep_time, try_overwite, no_overwrite=False, add_date=False
+    save_dir, file_name, url_2, debug, sleep_time, try_overwite=False, no_overwrite=False, add_date=False
 ):
     file_name = file_name.lstrip("/")
     print(file_name)
@@ -47,7 +47,7 @@ def get_pdf(
             if debug:
                 traceback.print_exc()
             sys.exit()
-            
+
         if add_date == True:
             date_name = date.today()
             file_name = (

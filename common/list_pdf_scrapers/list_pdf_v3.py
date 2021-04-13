@@ -21,6 +21,7 @@ def list_pdf_v3(
     try_overwite=False,
     name_in_url=True,
     add_date=False,
+    extract_name=False,
 ):  # try_overwite is for get_files
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -32,7 +33,8 @@ def list_pdf_v3(
         os.remove("url_name.txt")
     except FileNotFoundError:
         pass
-    extract_info(soup, configs)
+    extract_info(soup, configs, extract_name=extract_name)
+    
     if important == False:
         non_important = configs.non_important
         with open("url_name.txt", "r") as og_file, open(

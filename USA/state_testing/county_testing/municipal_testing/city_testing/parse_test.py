@@ -34,6 +34,7 @@ with open("html.html", 'r') as output:
     count = 1
     # for keeping track of multi-line descriptions
     desc_cont = False
+    incident_description = ''
     print('======================')
     with open("text.txt", "r") as data:
         for line in data:
@@ -49,7 +50,9 @@ with open("html.html", 'r') as output:
                 if 'Disposition: ' in line:
                     # if we reach 'Disposition' then we are done
                     print (incident_description)
-                    desc_cont = False
+                    # TODO: save incident description somewhere (like an obj or an array)
+                    incident_description = '' #reset back to empty 
+                    desc_cont = False # reset bool back
                     # remove the 'Disposition: ' prefix and any \n or . chars
                     disposition = line.split('Disposition: ')[1].strip().replace('.', '')
                     print('Disposition: ' + disposition)

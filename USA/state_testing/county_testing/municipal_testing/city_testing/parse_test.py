@@ -48,7 +48,7 @@ with open("html.html", 'r') as output:
             if count >= 2:   
                 # when we reach Disposition, it is the final part of the block
                 if 'Disposition: ' in line:
-                    # if we reach 'Disposition' then we are done
+                    # print out the full description we have been compiling
                     print (incident_description)
                     # TODO: save incident description somewhere (like an obj or an array)
                     incident_description = '' #reset back to empty 
